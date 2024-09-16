@@ -3,24 +3,73 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Page github lesabel</title>
+    <title>GNZABA FR</title>
     <style>
         body {
-            background: linear-gradient(to bottom, #0000ff, #00ffff);
+            background: url('https://via.placeholder.com/1920x1080') no-repeat center center fixed;
+            background-size: cover;
             color: white;
-            text-align: center;
             font-family: Arial, sans-serif;
             margin: 0;
-            height: 100vh;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
+            padding: 0;
         }
-        .cybersecurity-image {
-            width: 100px;
+        header {
+            background: rgba(0, 0, 0, 0.7);
+            padding: 10px 0;
+            text-align: center;
+        }
+        nav {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+        }
+        nav a {
+            color: white;
+            text-decoration: none;
+            font-size: 18px;
+            padding: 10px 20px;
+            background: rgba(255, 255, 255, 0.2);
+            border-radius: 5px;
+            transition: background 0.3s;
+        }
+        nav a:hover {
+            background: rgba(255, 255, 255, 0.4);
+        }
+        .content {
+            padding: 20px;
+            text-align: center;
+        }
+        .certification {
+            display: none;
+        }
+        .certification.active {
+            display: block;
+        }
+        .certification img {
+            width: 200px;
             height: auto;
+            margin-bottom: 20px;
+        }
+        .certification p {
+            background: rgba(0, 0, 0, 0.5);
+            padding: 20px;
+            border-radius: 10px;
+        }
+        .buttons {
             margin-top: 20px;
+        }
+        .buttons button {
+            margin: 0 10px;
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            background: rgba(255, 255, 255, 0.2);
+            border: none;
+            border-radius: 5px;
+            transition: background 0.3s;
+        }
+        .buttons button:hover {
+            background: rgba(255, 255, 255, 0.4);
         }
         .social-icons {
             margin-top: 20px;
@@ -34,28 +83,112 @@
             width: 30px;
             height: 30px;
         }
-        button {
-            margin: 10px;
-            padding: 10px 20px;
-            font-size: 16px;
+        .profile-form, .info-content {
+            background: rgba(0, 0, 0, 0.7);
+            padding: 20px;
+            border-radius: 10px;
+            display: inline-block;
+            text-align: left;
+        }
+        .profile-form input, .profile-form button {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: none;
+            border-radius: 5px;
+        }
+        .profile-form button {
+            background: rgba(255, 255, 255, 0.2);
             cursor: pointer;
+            transition: background 0.3s;
+        }
+        .profile-form button:hover {
+            background: rgba(255, 255, 255, 0.4);
         }
     </style>
 </head>
 <body>
-    <h1>ENSITECH</h1>
-    <p>Ecole : ENSITECH CERGY</p>
-    <p>Nom : Gaetan N</p>
-    <p>Classe : M2 SSR</p>
-    <p>Année : 2024-2025</p>
-    <p>Que voulez-vous faire ?</p>
-    <button onclick="alert('Commencer ici')">Commencer ici</button>
-    <button onclick="alert('Visite guidée')">Visite guidée</button>
-    <img src="https://github.com/lesabel/DEVOPS2025/blob/main/logo-cyber.jpg" alt="Cybersécurité" class="cybersecurity-image">
-    <div class="social-icons">
-        <a href="https://www.instagram.com/mister.light" target="_blank">
-            <img src="https://upload.wikimedia.org/wikipedia/commons/a/a5/Instagram_icon.png" alt="Instagram">
-        </a>
+    <header>
+        <h1>GNZABA FR</h1>
+        <nav>
+            <a href="#accueil">Accueil</a>
+            <a href="#profil">Profil</a>
+            <a href="#infos">Infos</a>
+        </nav>
+    </header>
+    <div id="accueil" class="content">
+        <h2>Bienvenue sur GNZABA FR</h2>
+        <div id="ccna" class="certification active">
+            <img src="https://via.placeholder.com/200" alt="CCNA">
+            <p>La certification CCNA (Cisco Certified Network Associate) est une certification de niveau débutant pour les professionnels de réseau.</p>
+        </div>
+        <div id="google-cyber" class="certification">
+            <img src="https://via.placeholder.com/200" alt="Google Cybersécurité">
+            <p>La certification Google Cybersécurité couvre les bases de la sécurité informatique et de la protection des données.</p>
+        </div>
+        <div id="palo-alto" class="certification">
+            <img src="https://via.placeholder.com/200" alt="Palo Alto">
+            <p>La certification Palo Alto est destinée aux professionnels de la sécurité réseau et couvre les technologies de sécurité avancées.</p>
+        </div>
+        <div class="buttons">
+            <button onclick="showPrevious()">Arrière</button>
+            <button onclick="showNext()">Suivant</button>
+        </div>
     </div>
+    <div id="profil" class="content" style="display:none;">
+        <h2>Profil</h2>
+        <div class="profile-form">
+            <p>Veuillez vous connecter ou vous inscrire.</p>
+            <form>
+                <input type="text" placeholder="Nom d'utilisateur" required><br>
+                <input type="password" placeholder="Mot de passe" required><br>
+                <button type="submit">Se connecter</button>
+                <p><a href="#">Mot de passe oublié ?</a></p>
+                <p><a href="#">S'inscrire</a></p>
+            </form>
+        </div>
+    </div>
+    <div id="infos" class="content" style="display:none;">
+        <h2>Infos</h2>
+        <div class="info-content">
+            <p>Adresse : 123 Rue Fictive, Paris, France</p>
+            <p>Téléphone : +33 1 23 45 67 89</p>
+            <p>Email : contact@glnzaba.fr</p>
+            <div class="social-icons">
+                <a href="https://www.instagram.com/mister.light" target="_blank">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/a/a5/Instagram_icon.png" alt="Instagram">
+                </a>
+                <a href="https://www.linkedin.com" target="_blank">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/c/ca/LinkedIn_logo_initials.png" alt="LinkedIn">
+                </a>
+                <a href="https://www.twitter.com" target="_blank">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/6/6f/Twitter_Logo_WhiteOnImage.png" alt="X">
+                </a>
+            </div>
+        </div>
+    </div>
+    <script>
+        let currentCertification = 0;
+        const certifications = document.querySelectorAll('.certification');
+
+        function showNext() {
+            certifications[currentCertification].classList.remove('active');
+            currentCertification = (currentCertification + 1) % certifications.length;
+            certifications[currentCertification].classList.add('active');
+        }
+
+        function showPrevious() {
+            certifications[currentCertification].classList.remove('active');
+            currentCertification = (currentCertification - 1 + certifications.length) % certifications.length;
+            certifications[currentCertification].classList.add('active');
+        }
+
+        document.querySelectorAll('nav a').forEach(link => {
+            link.addEventListener('click', function() {
+                document.querySelectorAll('.content').forEach(section => section.style.display = 'none');
+                document.querySelector(this.getAttribute('href')).style.display = 'block';
+            });
+        });
+    </script>
 </body>
 </html>
